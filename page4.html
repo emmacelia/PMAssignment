@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="en">
+<!--
+Eoghan Barker
+Register Account page in the storefront
+Contains bootstrap navbar + form with validation and uses internal javascript
+Uses localStorage to capture inputed data for use in checkout later on
+-->
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+     <!-- Bootstrap CSS -->
+	 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+	 <!--link to "AddToCart" javascript file-->
+	 <script src="AddToCart.js" defer></script>
+	 <title>Galway Sights and Bites</title>
+   </head>
+   
+   <body>
+	 <!--Bootstrap container for using the grid system-->
+	 <div class="container">
+		 <!--Heading Banner, visable on all pages, with bootstrap styling for padding, text formatting/colour, background colour-->
+		 <div class= "p-4 text-center fs-1 text-white bg-dark mt-2">Galway Sights and Bites</div>
+		 
+		 <!--Bootstrap Navbar for switching between pages-->
+		 <nav class="navbar navbar-expand-lg navbar-light bg-dark mt-2">
+		   <div class="container-fluid">
+			 <a class="navbar-brand text-info" href="#">Pages</a>
+			 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+			   <span class="navbar-toggler-icon"></span>
+			 </button>
+			 <div class="collapse navbar-collapse" id="navbarNav">
+			   <ul class="navbar-nav">
+				 <li class="nav-item">
+				   <a class="nav-link text-white" aria-current="page" href="page1.html">Home</a>
+				 </li>
+				 <li class="nav-item">
+				   <a class="nav-link text-white" href="page2.html">Bars and Restaurants</a>
+				 </li>
+				 <li class="nav-item">
+				   <a class="nav-link text-white" href="page3.html">Activities</a>
+				 </li>
+				 <li class="nav-item">
+				   <a class="nav-link text-white text-decoration-underline" href="#">Locations</a>
+				 </li>
+			   </ul>
+			 </div>
+		   </div>
+		 </nav>
+
+		<!--Bootstrap form with validation, this was demonstrated in a lab-->
+	  <div>
+		<h1>Registration Page</h1>
+		<p>Enter your details in the form below to create an account.</p>
+		<form onsubmit="validate()">
+			<div class="mb-3">
+				<label for="username" class="form-label"><b>Username</b></label>
+				<input type="text" class="form-control" id="username" placeholder="Username">
+			</div>
+			<div class="mb-3">
+				<label for="fname" class="form-label"><b>First Name</b></label>
+				<input type="text" class="form-control" id="fname" placeholder="First Name">
+			</div>
+			<div class="mb-3">
+				<label for="sname" class="form-label"><b>Last Name</b></label>
+				<input type="text" class="form-control" id="sname" placeholder="Last Name">
+			</div>
+			<div class="mb-3">
+				<label for="email" class="form-label"><b>Email address</b></label>
+				<input type="email" class="form-control" id="email" placeholder="Email">
+			</div>
+			<div class="mb-3">
+				<label for="pass" class="form-label"><b>Password</b></label>
+				<input type="password" class="form-control" id="pass" placeholder="Password">
+			</div>
+			<div class="mb-3">
+				<label for="pass2" class="form-label"><b>Confirm Password</b></label>
+				<input type="password" class="form-control" id="pass2" placeholder="Password">
+			</div>
+			<button type="submit" class="btn btn-primary">Submit</button>
+		</form>
+	  </div>	
+	</div>
+	
+<script>
+	// Function for validating registration info, if incorrect gives an alert
+	function validate(){
+		//store all the inputs in variables
+		let uname = document.getElementById("username").value;
+		let fname = document.getElementById("fname").value;
+		let sname = document.getElementById("sname").value;
+		let email = document.getElementById("email").value;
+		let p1 = document.getElementById("pass").value;
+		let p2 = document.getElementById("pass2").value;
+		let validator = "true";
+			
+		//Username must be at least 8
+		if(uname.length < 8){
+			alert("Username must be at least 8 characters");
+			validator = "false";
+		}
+		
+		//Check that first and last name fields have at least one character
+		if(fname.length < 1 || sname.length <1){
+			alert("First and Last name fields must not be empty");
+			validator = "false";
+		}
+
+		//Check for @ and . in email
+		if(email.includes("@") == false || email.includes(".") == false){
+			alert("Email must include @ and .");
+			validator = "false";
+		}
+			
+		//check password length
+		if(p1.length < 5){
+			alert("Pasword must be at least 5 characters long");
+			validator = "false";
+		}
+		
+		//check for matching passwords
+		if(p1 != p2){
+			alert("Passwords must match");
+			validator = "false";
+		}
+		
+		//validator will only be true if all checks were passed, will then send alert and take all info into localStorage
+		if(validator == "true"){
+			alert("Account Created Successfully");
+			localStorage.setItem("username", uname)
+			localStorage.setItem("password", p1)
+			localStorage.setItem("name", fname+" "+sname)
+			localStorage.setItem("email", email)
+			
+		}
+		
+	}
+	</script>
+  </body>
+</html>
