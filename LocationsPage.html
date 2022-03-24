@@ -1,0 +1,129 @@
+
+   
+<!doctype html>
+<html lang="en">
+<!--
+Emmacelia
+Top sellers page in the storefront
+Contains bootstrap navbar + carousel and uses an external javascript file
+-->
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+	<!--link to "AddToCart" javascript file-->
+	<script src="AddToCart.js" defer></script>
+    <title>Galway Sights and Bites</title>
+  </head>
+  
+  <body>
+	<!--Bootstrap container for using the grid system-->
+	<div class="container">
+		<!--Heading Banner, visable on all pages, with bootstrap styling for padding, text formatting/colour, background colour-->
+		<div class= "p-4 text-center fs-1 text-white bg-dark mt-2">Galway Sights and Bites</div>
+		
+		<!--Bootstrap Navbar for switching between pages-->
+		<nav class="navbar navbar-expand-lg navbar-light bg-dark mt-2">
+		  <div class="container-fluid">
+			<a class="navbar-brand text-info" href="#">Pages</a>
+			<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+			  <span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="collapse navbar-collapse" id="navbarNav">
+			  <ul class="navbar-nav">
+				<li class="nav-item">
+				  <a class="nav-link text-white " aria-current="page" href="#">Home</a>
+				</li>
+				<li class="nav-item">
+				  <a class="nav-link text-white" href="page2.html">Bars and Restaurants</a>
+				</li>
+				<li class="nav-item">
+				  <a class="nav-link text-white" href="page3.html">Activities</a>
+				</li>
+				<li class="nav-item">
+				  <a class="nav-link text-white text-decoration-underline" href="page4.html">Locations</a>
+				</li>
+			  </ul>
+			</div>
+		  </div>
+		</nav>
+		
+		
+		<!--Bootstrap Carousel with slides, captions, controls. Some of this was demonstrated in a lab session-->
+		<div id="carouselTopSeller" class="carousel slide mt-2" data-bs-ride="carousel">
+		<!--3 carousel slides with captions and add to cart buttons-->
+		  <div class="carousel-inner">
+			<div class="carousel-item active">
+			  <img src="images/galwaycathedral.jpg" class="d-block w-100" alt="Galway Cathedral">
+			  <div class="carousel-caption text-white d-none d-md-block">
+				<h3>galwaycathedral</h3>
+				<p>The Cathedral of Our Lady Assumed into Heaven and St Nicholas,
+					 commonly known as Galway Cathedral, is a Roman Catholic cathedral in Galway,
+					 Ireland, and one of the largest and most impressive buildings in the city.</p>
+				<button id="cs">More Info</button>
+				</div>
+			</div>
+			<div class="carousel-item">
+			  <img src="images/spanisharch.jpg" class="d-block w-100" alt="Spainish Arch">
+			  <div class="carousel-caption d-none d-md-block">
+				<h3>Spainish Arch</h3>
+				<p> The Spanish Arch is one of the last remaining pieces of Galway's historical city walls. 
+					As a medieval city, one of the main characteristics of Galway is that it used to have a wall that kept invading armies out  </p>
+			    <button id="arch">More Info</button>
+			  </div>
+			</div>
+
+			<div class="carousel-item">
+			  <img src="images/salthill.jpg" class="d-block w-100" alt="Salthill">
+			  <div class="carousel-caption d-none d-md-block">
+				<h3>Salthill
+				</h3>
+				<p>Salthill is a seaside area in the City of Galway in the west of Ireland. 
+					Lying within the townland of Lenaboy, it attracts many tourists all year round.
+					 There is a 2 km long promenade, locally known as the Prom, overlooking Galway Bay with bars, restaurants and hotels</p>
+			    <button id="Salthill">More Info</button>
+			  </div>
+			</div>
+		  </div>
+
+		  <!--carousel controls-->
+		  <button class="carousel-control-prev" type="button" data-bs-target="#carouselTopSeller"  data-bs-slide="prev">
+			<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+			<span class="visually-hidden">Previous</span>
+		  </button>
+		  <button class="carousel-control-next" type="button" data-bs-target="#carouselTopSeller"  data-bs-slide="next">
+			<span class="carousel-control-next-icon" aria-hidden="true"></span>
+			<span class="visually-hidden">Next</span>
+		  </button>
+		</div>
+	</div>
+	
+	
+	<!--Workaround for error in AddToCart.js caused by getElementById not being able to find all the ids-->
+	<div id="cyber"></div>
+	<div id="halo"></div>
+	<div id="itt"></div>
+	<div id="tf2"></div>
+	<div id="val"></div>
+	<div id="rl"></div>
+
+	<!-- Optional javascript: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
+  </body>  
+</html>
+© 2022 GitHub, Inc.
+Terms
+Privacy
+Security
+Status
+Docs
+Contact GitHub
+Pricing
+API
+Training
+Blog
+About
+Loading complete
