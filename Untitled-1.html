@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+<!--
+Eoghan Barker
+Contains bootstrap navbar + carousel
+-->
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+     <!-- Bootstrap CSS -->
+	 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+	 <title>Galway Sights and Bites</title>
+   </head>
+   
+   <body>
+	 <!--Bootstrap container for using the grid system-->
+	 <div class="container">
+		 <!--Heading Banner, visable on all pages, with bootstrap styling for padding, text formatting/colour, background colour-->
+		 <div class= "p-4 text-center fs-1 text-white bg-dark mt-2">Galway Sights and Bites</div>
+		 
+		 <!--Bootstrap Navbar for switching between pages-->
+		 <nav class="navbar navbar-expand-lg navbar-light bg-dark mt-2">
+		   <div class="container-fluid">
+			 <a class="navbar-brand text-info" href="#">Pages</a>
+			 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+			   <span class="navbar-toggler-icon"></span>
+			 </button>
+			 <div class="collapse navbar-collapse" id="navbarNav">
+			   <ul class="navbar-nav">
+				 <li class="nav-item">
+				   <a class="nav-link text-white" aria-current="page" href="Home.html">Home</a>
+				 </li>
+				 <li class="nav-item">
+				   <a class="nav-link text-white" href="BarsAndRestaurants.html">Bars and Restaurants</a>
+				 </li>
+				 <li class="nav-item">
+				   <a class="nav-link text-white" href="Activities.html">Activities</a>
+				 </li>
+				 <li class="nav-item">
+				   <a class="nav-link text-white text-decoration-underline" href="#">Locations</a>
+				 </li>
+			   </ul>
+			 </div>
+		   </div>
+		 </nav>
+		
+		
+		<!--Bootstrap Carousel with slides, captions, controls-->
+		<div id="carouselRecommended" class="carousel slide mt-2" data-bs-ride="carousel">
+		<!--3 carousel slides with captions and add to cart buttons-->
+		  <div class="carousel-inner">
+
+			<div class="carousel-item active">
+			  <img src="images/spanisharch.jpg" class="d-block w-100" alt="Spanish Arch">
+			  <div class="carousel-caption text-white d-none d-md-block">
+				<h3>Spanish Arch</h3>
+				<p>The Spanish Arch was built in 1584 and actually consisted of four 
+                    arches which were part of the medieval defensive walls of Galway.
+                     The Spanish Arch was an access point to the city and served to 
+                    protect the nearby quays where goods were loaded and unloaded onto ships</p>
+				<button >More Info</button>
+				</div>
+			</div>
+			<div class="carousel-item">
+			  <img src="images/galwaycathedral.jpg" class="d-block w-100" alt="Galway Cathedral">
+			  <div class="carousel-caption d-none d-md-block">
+				<h3>Galway Cathedral</h3>
+				<p>The Cathedral of Our Lady Assumed into Heaven and St Nicholas, 
+                    commonly known as Galway Cathedral, is a Roman Catholic cathedral in Galway, 
+                    Ireland, and one of the largest and most impressive buildings in the city</p>
+			    <button >More Info</button>
+			 </div>
+			</div>
+			<div class="carousel-item">
+			  <img src="images/salthill.jpg" class="d-block w-100" alt="Salthill">
+			  <div class="carousel-caption d-none d-md-block">
+				<h3>Salthill</h3>
+				<p> Salthill is a seaside resort on the northern shore of Galway Bay, Ireland.
+                     Its beach consists of a series of small rocky or sandy stretches. 
+                     Salthill Promenade offers views of the nearby harbour city of Galway 
+                     and the Aran Islands </p>
+			    <button>More Info</button>
+			  </div>
+			</div>
+		  </div>
+		  <!--carousel controls-->
+		  <button class="carousel-control-prev" type="button" data-bs-target="#carouselRecommended"  data-bs-slide="prev">
+			<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+			<span class="visually-hidden">Previous</span>
+		  </button>
+		  <button class="carousel-control-next" type="button" data-bs-target="#carouselRecommended"  data-bs-slide="next">
+			<span class="carousel-control-next-icon" aria-hidden="true"></span>
+			<span class="visually-hidden">Next</span>
+		  </button>
+		</div>
+	</div>
+
+	<!-- Optional javascript: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
+  </body>  
+</html>
